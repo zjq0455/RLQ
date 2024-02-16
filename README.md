@@ -16,7 +16,7 @@ python generate_act_scale_shift.py --model /PATH/TO/llama/llama-7b
 # W4A4
 CUDA_VISIBLE_DEVICES=0 python main.py \
 --model /PATH/TO/llama/llama-7b  \
---epochs 20 --output_dir ./log/llama-7b-w4a16 \
+--epochs 20 --output_dir ./log/llama-7b-w4a4 \
 --wbits 4 --abits 4 --lwc --let \
 --tasks piqa,arc_easy,arc_challenge,boolq,hellaswag,winogrande
 ```
