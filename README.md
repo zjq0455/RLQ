@@ -35,4 +35,5 @@ CUDA_VISIBLE_DEVICES=0 python main.py \
 
 ## Related Project
 [SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models](https://github.com/mit-han-lab/smoothquant)
+
 [OmniQuant: Omnidirectionally Calibrated Quantization for Large Language Models](https://github.com/OpenGVLab/OmniQuant.git)
