@@ -150,15 +150,9 @@ def tta(
             fp_layer = fp_layers[i].to(dev)
             qfp_layer = DecoderLayer(fp_lm.model.config, fp_layer, args)
             qfp_layer = qfp_layer.to(dev)          
-                                    
-            # init smooth parameters
-
-            use_shift = True 
-
-            qfp_layer.set_quant_state(weight_quant=False, act_quant=True)  # weight will be manually quantized before forward
-            qfp_layer.let = args.let
-
             qfp_layer.set_quant_state(weight_quant=False, act_quant=False)
+            qfp_layer.let = args.let          
+            use_shift = True             
             if args.epochs > 0:
                 with torch.no_grad():
                     with torch.cuda.amp.autocast():

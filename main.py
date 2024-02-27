@@ -133,7 +133,7 @@ def evaluate(lm, args, logger, fp_lm):
             lm2.model.config.use_cache = False
             lm2.model.eval()
 
-            if dataset != args.calib_dataset:   
+            if dataset != args.calib_dataset and args.tta:   
                 lm.model = lm.model.cpu()     
                 lm2.model = lm2.model.to(lm2.device)
                 lm2.model.eval()
@@ -266,7 +266,7 @@ def main():
     parser.add_argument("--multigpu", action="store_true", help="at eval, map model to multiple gpus")
     parser.add_argument("--deactive_amp", action="store_true", help="deactivate AMP when 8<=bits<16")
     parser.add_argument("--net", type=str, default=None, choices=net_choices)
-    # parser.add_argument("--net", type=str, default="llama-7b") # change here
+    parser.add_argument("--tta", action="store_true", help="test time adaptation") # change here
     parser.add_argument("--act-scales", type=str, default=None)
     parser.add_argument("--act-shifts", type=str, default=None)
     parser.add_argument("--tta-shifts", type=str, default=None)
