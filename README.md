@@ -17,7 +17,7 @@ python generate_act_scale_shift.py --model /PATH/TO/llama/llama-7b
 CUDA_VISIBLE_DEVICES=0 python main.py \
 --model /PATH/TO/llama/llama-7b  \
 --epochs 20 --output_dir ./log/llama-7b-w4a4 \
---wbits 4 --abits 4 --lwc --let \
+--eval_ppl --wbits 4 --abits 4 --lwc --let \
 
 # W4A4 zero-shot
 CUDA_VISIBLE_DEVICES=0 python main.py \
@@ -30,7 +30,7 @@ CUDA_VISIBLE_DEVICES=0 python main.py \
 CUDA_VISIBLE_DEVICES=0 python main.py \
 --model /PATH/TO/llama/llama-7b  \
 --epochs 20 --output_dir ./log/llama-7b-w4a4 \
---wbits 4 --abits 4 --lwc --let --tta\
+--eval_ppl --wbits 4 --abits 4 --lwc --let --tta\
 ```
 
 ## Related Project
